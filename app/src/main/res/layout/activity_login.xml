@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|center_vertical"
+    android:orientation="vertical"
+    tools:context=".Login">
+
+    <ImageView
+        android:layout_width="134dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/logo">
+
+    </ImageView>
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="194dp"
+        android:layout_height="59dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="UserName"
+        android:padding="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:drawablePadding="10dp"
+        android:inputType="textPersonName"
+        android:drawableLeft="@drawable/name"
+        android:textColor="#24D1C0"
+        android:textColorHint="#10D5C0" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="201dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="15dp"
+        android:background="#00E4BB41"
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="password"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:textColor="#00897B"
+        android:password="true"
+        android:textColorHint="#2ADAC8" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="251dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bs"
+        android:padding="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:text="login"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColorHint="#EEC512"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/create"
+        android:layout_width="333dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bs"
+        android:drawablePadding="10dp"
+        android:padding="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:text="Create New User"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+
+</LinearLayout>

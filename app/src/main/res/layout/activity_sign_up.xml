@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".SignUp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="login Information"
+            android:textSize="20sp" />
+
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="318dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:drawablePadding="10dp"
+            android:hint="Name"
+            android:padding="10dp"
+            android:textColorHint="#E9C836" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="318dp"
+            android:layout_height="wrap_content"
+            android:hint="username"
+            android:padding="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="321dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Email"
+            android:padding="15dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:textColorHighlight="#0C8BFA"
+            android:textColorHint="#2192F5" />
+
+        <EditText
+            android:id="@+id/editText6"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:padding="15dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:hint="phone number"
+            android:textColorHint="#1B8EF3" />
+
+        <EditText
+            android:id="@+id/editText7"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:padding="15dp"
+            android:hint="password"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:textColorHint="#2C96F3" />
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioG">
+
+
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Man"
+                android:textColor="#30FFCB"
+                android:textColorHint="#00E72E2E"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="158dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="10dp"
+                android:text="Female"
+                android:textColor="#33ECBE"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+        </RadioGroup>
+        <Button
+            android:id="@+id/button2"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="106dp"
+            android:text="register"
+            android:padding="15dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:drawablePadding="10dp"
+            android:textColorHint="#E0C35A"
+            android:textSize="36sp" />
+
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
