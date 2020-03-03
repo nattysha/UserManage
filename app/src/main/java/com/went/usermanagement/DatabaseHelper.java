@@ -23,6 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String email= "email";
     public static final String password = "password";
     public static final String Gender = "Gender";
+
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
 
@@ -32,7 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createUserTable = "CREATE TABLE " + TABLE_NAME +
                 " ( "
-                + fname + "text,"
+                + fname + " text,"
                 + usrname + " text ,"
                 + phone + " int ,"
                 + email + " text ,"
@@ -40,6 +41,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + Gender + " text "
                 + " ) ";
         db.execSQL(createUserTable);
+        System.out.println ( "database creatded" );
     }
 
 
@@ -57,7 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues= new ContentValues();
         //contentValues.put("imgUri",imgPath);
-        contentValues.put("fname",user.getFull_name ());
+        contentValues.put("name",user.getFull_name ());
         contentValues.put("username",user.getUsername());
         contentValues.put("phone",user.getPhone());
         contentValues.put("email",user.getEmail());
@@ -87,18 +89,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase ();
         String filter = email + " , " + password;
         String condition = "'"+ mail +"'" + " = " + email;
-        Cursor res = db.rawQuery("SELECT "+ filter + " FROM " + TABLE_NAME + " WHERE " + condition, null );
-
-
+        Cursor res = db.rawQuery("SELECT  * FROM " + TABLE_NAME + " WHERE " + condition, null );
         boolean r=false;
-        if (res.getCount()==0)
-        {
-            r=false;
-        }
-        else
-        {
-            r=true;
+        if (res.getCount()!=0) {
+            r = true;
         }
         return r;
+    }
+    public Cursor getAll() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT *FROM usertable", null);
     }
 }

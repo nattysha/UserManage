@@ -20,6 +20,7 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_sign_up );
+        System.out.println ( "user created4" );
         editText2 = findViewById ( R.id.editText3 );
         editText3 = findViewById ( R.id.editText4 );
         editText4 = findViewById ( R.id.editText5 );
@@ -29,12 +30,25 @@ public class SignUp extends AppCompatActivity {
         String f2=editText3.getText ().toString ();
         String f3=editText4.getText ().toString ();
         String f4=editText5.getText ().toString ();
+        r1=findViewById ( R.id.male );
+        r2=findViewById ( R.id.female );
+        button2=findViewById ( R.id.button2 );
         String f5="male";
+        System.out.println ( "user created3" );
+        if(r1.isChecked ())
+        {
+            f5="male";
+        }
+        if(r2.isChecked ())
+        {
+            f5="female";
+        }
         String f6=editText6.getText ().toString ();
         r1 = findViewById ( R.id.male );
         r2=findViewById ( R.id.female );
         button2=findViewById ( R.id.button2 );
        u=new USER (f1,f2,f3,f4,f5,f6);
+       System.out.println ( "user created" );
         button2.setOnClickListener ( new View.OnClickListener ( ) {
             @Override
             public void onClick(View v) {

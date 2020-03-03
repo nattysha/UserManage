@@ -34,12 +34,6 @@ Context context;
         recyclerView.setLayoutManager ( new LinearLayoutManager ( getContext ()));
         list = new ArrayList (  );
         list=(new DatabaseHelper ( getContext () )).getAllData ();
-        for (Object i : list)
-        {
-            System.out.println ( ((USER)i).getEmail () );
-            System.out.println ( ((USER)i).getFull_name () );
-            System.out.println ( ((USER)i).getPassword () );
-        }
         //recyclerView.addItemDecoration ( dividerItemDecoration );
         AdapeterUser adapeter=new AdapeterUser (getContext (),list );
         recyclerView.setAdapter ( adapeter);

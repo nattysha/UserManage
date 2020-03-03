@@ -13,13 +13,13 @@ public class DBAdapter extends SQLiteOpenHelper {
     private static final String tableName="Students";
     private static final int verion=2;
     private static final String id="_id";
-    private  static final String name="fname";
+    private  static final String name="FullName";
     private static final String userName="username";
-    private static final String Gender="Gender";
+    private static final String gender="Gender";
     private static final String Email="Email";
     private static final String PhoneNo="PhoneNo";
     private static final String Password="Password";
-    String columns[]={id, name, userName, Gender, Email, PhoneNo,Password};
+    String columns[]={id, name, userName, gender, Email, PhoneNo,Password};
 
     public DBAdapter(Context context, String dbName, SQLiteDatabase.CursorFactory factory, int verion){
         super(context, dbName,factory,verion);
@@ -38,15 +38,15 @@ public class DBAdapter extends SQLiteOpenHelper {
     }
     public void insertData(String name, String userName, String gender,String Email, String PhoneNo,  String Password){
         SQLiteDatabase db= getWritableDatabase();
-        String sql = "Insert into Students values(101," +name+ "text,"+ userName +"text," +gender +"text,"+ Email+"text, "+PhoneNo +"int," +Password+"text)" ;
+        String sql = "Insert into Students values(101," +name+ "text,"+ userName +"text," +gender +"text,"+ Email+"varchar(20), "+PhoneNo +"varchar(15)," +Password+"varchar(15))" ;
         db.close();
     }
-    public void insertRecord(String fname, String userName, String gender,String Email, String PhoneNo,  String Password){
+    public void insertRecord(String name, String userName, String gender,String Email, String PhoneNo,  String Password){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(this.name,fname);
+        contentValues.put(this.name,name);
         contentValues.put(this.userName,userName);
-        contentValues.put(this.Gender,Gender);
+        contentValues.put(this.gender,gender);
         contentValues.put(this.Email,Email);
         contentValues.put(this.PhoneNo,PhoneNo);
         contentValues.put(this.Password,Password);
@@ -54,18 +54,18 @@ public class DBAdapter extends SQLiteOpenHelper {
 
     }
 
-    public void updateData(String name, String userName, String Gender,String Email, String PhoneNo,  String Password, int id){
+    public void updateData(String name, String userName, String gender,String Email, String PhoneNo,  String Password, int id){
         SQLiteDatabase db = getWritableDatabase();
-        String sql= "Update Students Set fname= ?, username= ?, Gender= ?, Email= ?, PhoneNo= ?, Password= ? where id= ?";
+        String sql= "Update Students Set FullName= ?, username= ?, Gender= ?, Email= ?, PhoneNo= ?, Password= ? where id= ?";
         SQLiteStatement statement= db.compileStatement(sql);
         statement.clearBindings();
-        statement.bindString(0, name);
-        statement.bindString(1, userName);
-        statement.bindString(2, Gender);
-        statement.bindString(3, Email);
-        statement.bindString(4, PhoneNo);
-        statement.bindString(5, Password);
-        statement.bindDouble(6,(double)id);
+        statement.bindString(1, name);
+        statement.bindString(2, userName);
+        statement.bindString(3, gender);
+        statement.bindString(4, Email);
+        statement.bindString(5, PhoneNo);
+        statement.bindString(6, Password);
+        statement.bindDouble(7,(double)id);
 
         statement.execute();
         db.close();
@@ -87,7 +87,7 @@ public class DBAdapter extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql= "CREATE TABLE Students("+ getId() +" INTEGER PRIMARY KEY AUTOINCREMENT, name Text, username Text, Gender Text, Email Text, PhoneNo int, Password Text)";
+        String sql= "CREATE TABLE Students("+ getId() +" INTEGER PRIMARY KEY AUTOINCREMENT, FullName Text, username Text, Gender Text, Email Text, PhoneNo Text, Password Text)";
         db.execSQL(sql);
     }
 

@@ -53,6 +53,7 @@ public class AdapeterUser extends RecyclerView.Adapter<AdapeterUser.UserviewHOld
 
         public UserviewHOlder(@NonNull View itemView) {
             super ( itemView );
+            System.out.println ( "user created1" );
             t1=itemView.findViewById ( R.id.textView);
             t2=itemView.findViewById ( R.id.textView2 );
             t3=itemView.findViewById ( R.id.textView3);
